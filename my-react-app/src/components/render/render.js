@@ -3,4 +3,4 @@ function render(){
   return;
 }
 
-export  {render}
+export  {render};
