@@ -1,6 +1,7 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import ReactDOM from './components/j-dom'
+import Component from './components/j-dom/Component';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -30,7 +31,12 @@ const jsx = (<div>
   <h1 className="asd">自行车</h1>
   <a href="https://www.baidu.com">baidu</a>
   <FunCom name="FunCom"></FunCom>
-  <ClassCom name="ClassCom"></ClassCom>
+  <ClassCom name="ClassCom"/>
+
+  <>
+    <h1>abc</h1>
+    <h1>abcd</h1>
+  </>
 </div>);
 
 ReactDOM.render(
