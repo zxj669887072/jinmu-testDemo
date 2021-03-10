@@ -37,4 +37,4 @@ for(let i = 0;i<= 100000;i++){
     sum += i
   }
 };
-console.log(sum);
+console.log('十万内快乐数之和',sum);
