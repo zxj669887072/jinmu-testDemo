@@ -23,5 +23,5 @@ const fs = require('fs');
   const readFile = promisify(fs.readFile);
   const data = await readFile('./a.js');
 
-  console.log('data',data);
+  console.log('data',data,data.toString());
 })();
