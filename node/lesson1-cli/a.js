@@ -13,6 +13,7 @@ function sort (A, B) {
   }
   return C
 }
-console.log(__dirname,sort([1,3,5],[4,5,6,7,8]));
-console.log(sort([],[1]));
+// console.log(__dirname,sort([1,3,5],[4,5,6,7,8]));
+// console.log(sort([],[1]));
+console.log(sort([1,2,3,6,8],[1,3]));
 module.exports = sort;
