@@ -67,3 +67,48 @@ var tree1 = {
 };
 
 console.log(preorderTraversal(tree1));
+
+function tierTraversal(root){  
+  let res = [];
+  function tierT(root,key,res){
+    if(!root) return ;
+    if(!res[key]){
+      res[key] = []
+    };
+
+    /* res[key].push(root.val); */
+    if(key % 2 === 1){
+      res[key].unshift(root.val);
+    }else{
+      res[key].push(root.val);
+    };
+
+    tierT(root.left,key+1,res);
+    tierT(root.right,key+1,res);
+  }
+  tierT(root,0,res);
+
+  return res;
+};
+console.log(tierTraversal(tree1));
+
+var maxDepth = function(root) {
+  let res = [];
+  function depT(root,key,res){
+    // console.log(root);
+    
+    if(!root){
+      res.push(0);
+      return;
+    };
+    // console.log(key);
+    res.push(key);
+    
+    depT(root.left,key+1,res);
+    depT(root.right,key+1,res);
+  }
+  depT(root,1,res);
+
+  return Math.max(...res);
+};
+console.log(maxDepth(null));
