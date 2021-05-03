@@ -1,3 +1,6 @@
 body{
-    background-color: aquamarine;
+    background-color: gray;
+    border: 2px solid red;
+    border-radius: 5px;
+    transition: all .5s;
 }
