@@ -4,14 +4,14 @@ const htmlwebpackplugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
     mode: "development", // "production" | "development" | "none"
-    entry: "./src/index.js",
-    // entry: {
-    //     main: "./src/index.js",
-    //     zxc: "./src/zxc.js"
-    // },
+    // entry: "./src/index.js",
+    entry: {
+        index: "./src/index.js",
+        zxc: "./src/zxc.js"
+    },
     output: {
         // filename: "main.js",
-        filename: "[name].js",
+        filename: "[name]-[chunkhash:8].js",
         path: path.resolve(__dirname, "dist"), // string
         // 所有输出文件的目标路径
         // 必须是绝对路径（使用 Node.js 的 path 模块）
@@ -79,14 +79,29 @@ module.exports = {
             test:/\.(jpe?g|png|gif|webp)$/,
             // test:/\.jpg$/,
             use:[{
-                loader: "file-loader",
+                // loader: "file-loader",
+                loader: "url-loader",
                 options:{
                     name: '[name].[ext]',
                     // 图片存放位置
-                    // outputPath:'images',
-                    // publicPath: "../images/",
+                    outputPath:'images',
+                    publicPath: "../images/",
+                    
+                    // url-loader的临界值
+                    limit: 3*1024
                 }
             }]
+        },
+        {
+            test:/\.woff2$/,
+            use: {
+                loader: "file-loader",
+                options:{
+                    name: '[name].[ext]',
+                    outputPath: 'fonts',
+                    publicPath: '../fonts/'
+                }
+            }
         }
     ]
     },
@@ -94,12 +109,20 @@ module.exports = {
     plugins:[
         new htmlwebpackplugin({
             template: "./src/index.html",
-            filename: "index.html"
+            filename: "index.html",
+            chunks:['index']
+        }),
+
+        new htmlwebpackplugin({
+            title: 'zxc--',
+            template: "./src/zxc.html",
+            filename: "zxc.html",
+            chunks:['zxc']
         }),
 
         // css抽离单独文件
         new miniCssExtractPlugin({
-            filename: "[name].css"
+            filename: "css/[name]-[contenthash:8].css"
         }),
         new CleanWebpackPlugin(),
     ],

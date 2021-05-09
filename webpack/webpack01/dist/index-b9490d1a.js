@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/a.js":
+/*!******************!*\
+  !*** ./src/a.js ***!
+  \******************/
+/*! exports provided: str */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"str\", function() { return str; });\nlet str = 'asd ===> zxczxc',obj = {};\r\n// export default str;\r\nfunction aa(){ \r\n\r\n    return\r\n}; \r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/a.js?");
+
+/***/ }),
+
 /***/ "./src/css/index.less":
 /*!****************************!*\
   !*** ./src/css/index.less ***!
@@ -98,18 +110,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./src/images/logo.jpg":
-/*!*****************************!*\
-  !*** ./src/images/logo.jpg ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"logo.jpg\");\n\n//# sourceURL=webpack:///./src/images/logo.jpg?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -118,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/index.less */ \"./src/css/index.less\");\n/* harmony import */ var _images_logo_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/logo.jpg */ \"./src/images/logo.jpg\");\n\r\n \r\n\r\n\r\nconsole.log('pic',_images_logo_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\r\n\r\nconst img = new Image();\r\nimg.src = _images_logo_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\r\n// document.querySelector('.flex-box').appendChild(img);\r\n\r\n\r\n// import './css/index.css';\r\n/* // import css from './css/index.css';\r\n// console.log(css);\r\n\r\n\r\n// console.log('index.js');\r\n// console.log('NODE_ENV:' + process.env.NODE_ENV);\r\n// // let a = '';\r\n\r\nimport {str} from \"./a.js\";\r\nconsole.log(str);\r\n\r\nconst obj1 = {\r\n    name:'zxc'\r\n};\r\n// console.log(obj1?.name?.b);\r\n */\r\n\r\nconsole.log('index.js');\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/index.less */ \"./src/css/index.less\");\n/* harmony import */ var _a_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./a.js */ \"./src/a.js\");\nconsole.log('index.js');\r\n\r\n\r\n// const img1 = require('./images/logo.jpg');\r\n// console.log('require-img1',img1);\r\n// const imge = new Image();\r\n// imge.src = img1;\r\n\r\n// import pic from \"./images/logo.jpg\";\r\n// console.log('pic',pic);\r\n\r\n// const img = new Image();\r\n// img.src = pic;\r\n// document.querySelector('.flex-box').appendChild(img);\r\n\r\n// import './css/index.css';\r\n/* // import css from './css/index.css';\r\n// console.log(css);\r\n\r\n// console.log('index.js');\r\n// console.log('NODE_ENV:' + process.env.NODE_ENV);\r\n// // let a = '';\r\n\r\nconst obj1 = {\r\n    name:'zxc'\r\n};\r\n// console.log(obj1?.name?.b);\r\n */\r\n\r\n\r\nconsole.log(_a_js__WEBPACK_IMPORTED_MODULE_1__[\"str\"]);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

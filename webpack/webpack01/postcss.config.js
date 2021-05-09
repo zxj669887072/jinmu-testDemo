@@ -5,6 +5,7 @@ module.exports = {
         
         // 2.require引用方式
         require('autoprefixer'),
+        
         "cssnano",              //压缩
     ]
 }
