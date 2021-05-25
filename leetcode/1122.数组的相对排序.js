@@ -11,7 +11,7 @@
  * @return {number[]}
  */
 var relativeSortArray = function(arr1, arr2) {
-  const arr = Array(1010).fill(0);
+  const arr = Array(1001).fill(0);
   for (let i = 0; i < arr1.length; i++){
     arr[arr1[i]] ++;
   };
