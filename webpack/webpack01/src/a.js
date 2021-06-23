@@ -1,4 +1,7 @@
 let str = 'asd',obj = {};
+try {
+    
+    consol.log('a.js');
 // export default str;
 function aa(){ 
 
@@ -6,4 +9,8 @@ function aa(){
 }; 
 
 
+
+} catch (error) {
+    console.log(error.message,error);
+}
 export {str};

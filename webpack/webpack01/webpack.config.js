@@ -16,8 +16,16 @@ module.exports = {
         // 所有输出文件的目标路径
         // 必须是绝对路径（使用 Node.js 的 path 模块）
     },
+    devtool: 'source-map',
     resolveLoader: {
         modules: ["node_modules","./my-loaders"],
+    },
+    devServer: {
+        proxy: {},
+        host: '0.0.0.0',
+        port: '8081',
+        open: true,
+
     },
     module: {
         rules:[{
