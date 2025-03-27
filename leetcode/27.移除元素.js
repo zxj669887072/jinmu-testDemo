@@ -32,11 +32,10 @@ var removeElement = function (nums, val) {
   if (removeElementCount === 0) return ln;
 
   // 剩余的元素数
-  let res = ln - removeElementCount;
+  let res = leftIndexList.length;
 
   // 可移动的元素次数
   let moveNum = Math.min(res, removeElementCount);
-
   if (moveNum > 0) {
     for (let i = 0; i < moveNum; i++) {
       let moveIndex = leftIndexList.shift(),
@@ -47,8 +46,7 @@ var removeElement = function (nums, val) {
       nums[removeIndex] = nums[moveIndex];
     }
   }
-
-  // console.log("nums", nums);
+  
   return res;
 };
 // @lc code=end
