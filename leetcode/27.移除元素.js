@@ -14,13 +14,14 @@ var removeElement = function (nums, val) {
   let ln = nums.length;
   if (ln === 0) return 0;
 
-  let removeIndexList = [], leftIndexList = [];
+  let removeIndexList = [],
+    leftIndexList = [];
   for (let i = 0; i < ln; i++) {
     const v = nums[i];
     if (v === val) {
       removeIndexList.push(i);
-    }else{
-      leftIndexList.unshift(i)
+    } else {
+      leftIndexList.unshift(i);
     }
   }
 
@@ -36,10 +37,10 @@ var removeElement = function (nums, val) {
   // 可移动的元素次数
   let moveNum = Math.min(res, removeElementCount);
 
-
   if (moveNum > 0) {
     for (let i = 0; i < moveNum; i++) {
-      let moveIndex = leftIndexList.shift(), removeIndex = removeIndexList[i];
+      let moveIndex = leftIndexList.shift(),
+        removeIndex = removeIndexList[i];
       if (moveIndex < removeIndex) {
         break;
       }
