@@ -10,8 +10,7 @@
  * @return {number}
  */
 var singleNumber = function (nums) {
-  let ln = nums.length;
-  if (ln === 1) return nums[0];
+  if (nums.length === 1) return nums[0];
 
   /* let obj = {};
   for (let i = 0; i < ln; i++) {
