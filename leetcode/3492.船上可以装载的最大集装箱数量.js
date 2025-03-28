@@ -11,8 +11,7 @@
  * @param {number} maxWeight
  * @return {number}
  */
-var maxContainers = function(n, w, maxWeight) {
-    
+var maxContainers = function (n, w, maxWeight) {
+  return Math.min(n * n, Math.floor(maxWeight / w));
 };
 // @lc code=end
-
