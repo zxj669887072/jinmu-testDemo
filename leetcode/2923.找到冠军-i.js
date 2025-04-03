@@ -10,7 +10,7 @@
  * @return {number}
  */
 var findChampion = function (grid) {
-  let obj = {},n = grid.length;
+  /* let obj = {},n = grid.length;
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
       if (grid[i][j] === 1 && !obj[j]) {
@@ -23,7 +23,21 @@ var findChampion = function (grid) {
     if (!obj[i]) {
       return i;
     }
+  } */
+
+  let obj = {},n = grid.length;
+  let res = 0;
+  for (let i = 0; i < n; i++) {
+    res += i;
+    for (let j = 0; j < n; j++) {
+      if (grid[i][j] === 1 && !obj[j]) {
+        obj[j] = 1;
+        res -= j;
+      }
+    }
   }
+
+  return res;
 };
 // @lc code=end
 
