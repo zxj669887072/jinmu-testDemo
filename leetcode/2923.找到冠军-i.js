@@ -9,8 +9,8 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var findChampion = function (grid) {
-  /* let obj = {},n = grid.length;
+
+/* let obj = {},n = grid.length;
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
       if (grid[i][j] === 1 && !obj[j]) {
@@ -25,7 +25,7 @@ var findChampion = function (grid) {
     }
   } */
 
-  let obj = {},n = grid.length;
+/* let obj = {},n = grid.length;
   let res = 0;
   for (let i = 0; i < n; i++) {
     res += i;
@@ -36,7 +36,19 @@ var findChampion = function (grid) {
       }
     }
   }
+  return res; */
 
+var findChampion = function (grid) {
+  let n = grid.length, res = 0;
+  for (let i = 0; i < n; i++) {
+    res += i;
+    for (let j = 0; j < n; j++) {
+      if (grid[i][j] === 1 && !grid[j].f) {
+        grid[j].f = 1;
+        res -= j;
+      }
+    }
+  }
   return res;
 };
 // @lc code=end
