@@ -11,13 +11,12 @@
  */
 var rowAndMaximumOnes = function (mat) {
   let index = 0,
-    max = 0,
-    ln = mat.length;
-  for (let i = 0; i < ln; i++) {
-    let count = mat[i].reduce((a, b) => {
-      b === 1 && a++;
-      return a;
-    }, 0);
+    max = 0;
+  for (let i = 0, ln = mat.length; i < ln; i++) {
+    let count = 0;
+    for (let j = 0, l = mat[i].length; j < l; j++) {
+      mat[i][j] === 1 && count++;
+    }
     if (count > max) {
       max = count;
       index = i;
@@ -27,6 +26,12 @@ var rowAndMaximumOnes = function (mat) {
   return [index, max];
 };
 // @lc code=end
-console.log(rowAndMaximumOnes([[0,1],[1,0]]));
-console.log(rowAndMaximumOnes([[0,0,0],[0,1,1]]));
-console.log(rowAndMaximumOnes([[0,0],[1,1],[0,0]]));
+console.log(
+  rowAndMaximumOnes([[0, 1],[1, 0],])
+);
+console.log(
+  rowAndMaximumOnes([[0, 0, 0],[0, 1, 1],])
+);
+console.log(
+  rowAndMaximumOnes([[0, 0],[1, 1],[0, 0],])
+);
