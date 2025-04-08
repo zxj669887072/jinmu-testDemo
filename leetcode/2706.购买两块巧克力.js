@@ -16,7 +16,7 @@ var buyChoco = function (prices, money) {
   // return money >= total ? money - total : money;
 
   let res = -1;
-  for (let i = 0, ln = prices.length; i < ln; i++) {
+  for (let i = 0, ln = prices.length; i < ln - 1; i++) {
     if (prices[i] >= money) {
       continue;
     }
@@ -33,4 +33,4 @@ var buyChoco = function (prices, money) {
 // @lc code=end
 console.log(buyChoco([98, 54, 6, 34, 66, 63, 52, 39], 62)); // 22
 console.log(buyChoco([3, 2, 3], 3)); // 3
-console.log(buyChoco([1, 2, 2], 3)); // 3
+console.log(buyChoco([1, 2, 2], 3)); // 0
