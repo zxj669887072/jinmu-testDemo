@@ -27,8 +27,8 @@ var semiOrderedPermutation = function (nums) {
         j++;
         res++;
       }
-      endSort = true;
       if (startSort) return res;
+      endSort = true;
     }
 
     if (!startSort && nums[i] === 1) {
@@ -39,8 +39,8 @@ var semiOrderedPermutation = function (nums) {
         j--;
         res++;
       }
-      startSort = true;
       if (endSort) return res;
+      startSort = true;
     }
   }
 
