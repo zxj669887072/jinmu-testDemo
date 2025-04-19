@@ -10,8 +10,6 @@
  * @return {number}
  */
 var semiOrderedPermutation = function (nums) {
-  // if (nums[0] === 1 && nums[nums.length - 1] === nums.length) return 0;
-
   let n = nums.length;
   let startSort = nums[0] === 1,
     endSort = nums[n - 1] === n;
