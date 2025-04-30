@@ -11,37 +11,51 @@
  * @return {number}
  */
 var largestInteger = function (nums, k) {
-  let obj = {};
-  for (let i = 0, ln = nums.length; i < ln; i++) {
-    if (i + k > ln) {
-      break;
-    }
+  let ln = nums.length,
+    filterObj = {};
 
-    // console.log(i, nums.slice(i, i + k));
-    let arr = nums.slice(i, i + k);
-    // let arr = [...new Set(nums.slice(i, i + k))];
-    let _map = {}
-    for (let j = 0, ln = arr.length; j < ln; j++) {
-      if(arr[j] in _map || obj[arr[j]] >=2 ) {
+  if (k === 1) {
+    let res = -1;
+    for (let i = 0; i < ln; i++) {
+      if (filterObj[nums[i]] === 2) {
         continue;
       }
-      _map[arr[j]] = 1;
-      if (arr[j] in obj) {
-        obj[arr[j]]++;
+      if (nums[i] in filterObj) {
+        filterObj[nums[i]]++;
       } else {
-        obj[arr[j]] = 1;
+        filterObj[nums[i]] = 1;
       }
     }
-  }
-  // console.log(obj);
-
-  let res = -1;
-  for (let key in obj) {
-    if (obj[key] === 1) {
-      res = Math.max(res, key);
+    for (let key in filterObj) {
+      if (filterObj[key] === 1) {
+        res = Math.max(res, key);
+      }
     }
+    return res;
   }
-  return res
+
+  if (k === ln) {
+    return Math.max(...nums);
+  } else {
+    for (let i = 1; i < ln - 1; i++) {
+      filterObj[nums[i]] = 1;
+    }
+    // console.log(filterObj,filterObj[nums[0]],filterObj[nums[ln - 1]]);
+
+    if(nums[0] === nums[ln - 1]) {
+      return -1;
+    }
+
+    if (filterObj[nums[0]] && filterObj[nums[ln - 1]]) {
+      return -1;
+    }
+
+    if (!filterObj[nums[0]] && !filterObj[nums[ln - 1]]) {
+      return Math.max(nums[0], nums[ln - 1]);
+    }
+    
+    return filterObj[nums[0]] ? nums[ln - 1] : nums[0];
+  }
 };
 // @lc code=end
 console.log(largestInteger([3, 9, 2, 1, 7], 3), "\n\n\n"); // 7
@@ -50,3 +64,7 @@ console.log(largestInteger([0, 0], 1), "\n\n\n"); // -1
 console.log(largestInteger([0, 0], 2), "\n\n\n"); // 0
 console.log(largestInteger([0, 50], 1), "\n\n\n"); // 50
 console.log(largestInteger([8, 1, 8], 3), "\n\n\n"); // 8
+console.log(largestInteger([8, 1, 8, 1], 1), "\n\n\n"); // 
+console.log(largestInteger([8, 1, 8, 1, 0], 1), "\n\n\n"); // 
+console.log(largestInteger([8, 1, 8, 1, 8, 9], 1), "\n\n\n"); // 
+console.log(largestInteger([10,12,9,7,10], 3), "\n\n\n"); // -1
