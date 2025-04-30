@@ -38,14 +38,15 @@ var largestInteger = function (nums, k) {
     return Math.max(...nums);
   }
 
+  if (nums[0] === nums[ln - 1]) {
+    return -1;
+  }
+
   for (let i = 1; i < ln - 1; i++) {
     filterObj[nums[i]] = 1;
   }
   // console.log(filterObj,filterObj[nums[0]],filterObj[nums[ln - 1]]);
-
-  if (nums[0] === nums[ln - 1]) {
-    return -1;
-  }
+  
 
   if (filterObj[nums[0]] && filterObj[nums[ln - 1]]) {
     return -1;
