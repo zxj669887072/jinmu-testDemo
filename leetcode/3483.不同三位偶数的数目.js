@@ -91,7 +91,6 @@ var totalNumbers = function (digits) {
   for (let i = 0; i < len; i++) {
     // 如果是偶数并且没有使用过
     if (digits[i] % 2 === 0 && obj1[digits[i]] === undefined) {
-      // console.log("偶数", digits[i]);
       obj1[digits[i]] = 1;
 
       // 统计所有数字出现的次数
@@ -107,22 +106,19 @@ var totalNumbers = function (digits) {
       if (obj3[digits[i]] === 0) {
         delete obj3[digits[i]];
       }
-      // console.log("obj", obj2, obj3);
-
-      // 记录非0重复的数字
-      let numlist = Object.keys(obj3).filter((n) => obj3[n] > 1 && n !== "0");
-      // console.log("numlist", numlist);
 
       let newArrSet = new Set(Object.keys(obj3));
       let size = newArrSet.size; // 剩余不重复数字的个数
-      // console.log("size", newArrSet, size);
 
       if (size == 1) {
         // 只剩1个数字
         let onlyNumber = digits[i === len - 1 ? 0 : i + 1];
         if (onlyNumber !== 0) num += 1;
       } else {
-        // 多余1个数字时，计算排列组合  注意去除0
+        // 记录非0重复的数字
+        let numlist = Object.keys(obj3).filter((n) => obj3[n] > 1 && n !== "0");
+
+        // 多于1个数字时，计算排列组合  注意去除0
         let isZero = newArrSet.has("0") ? 1 : 0;
         num += size * (size - 1) - isZero * (size - 1) + numlist.length;
       }
