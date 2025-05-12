@@ -17,6 +17,7 @@ var sumOfMultiples = function (n) {
   //       [3, 5, 7].some((i) => (idx + 1) % i === 0) ? a + idx + 1 : a,
   //     0
   //   );
+  
   let res = 0;
   for(let i = 1; i <= n; i++) {
     if(i % 3 === 0 || i % 5 === 0 || i % 7 === 0) {
@@ -27,3 +28,8 @@ var sumOfMultiples = function (n) {
   
 };
 // @lc code=end
+
+console.log(sumOfMultiples(7),'\n\n\n'); // 21
+console.log(sumOfMultiples(10),'\n\n\n'); // 40
+// console.log(sumOfMultiples(9)); // 30
+console.log(sumOfMultiples(100)); // 
