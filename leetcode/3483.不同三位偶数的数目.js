@@ -107,19 +107,18 @@ var totalNumbers = function (digits) {
         delete obj3[digits[i]];
       }
 
-      let newArrSet = new Set(Object.keys(obj3));
-      let size = newArrSet.size; // 剩余不重复数字的个数
+      let aS = Object.keys(obj3),
+        size = aS.length; // 剩余不重复数字的个数
 
       if (size == 1) {
         // 只剩1个数字
-        let onlyNumber = digits[i === len - 1 ? 0 : i + 1];
-        if (onlyNumber !== 0) num += 1;
+        if (aS[0] != 0) num += 1;
       } else {
         // 记录非0重复的数字
-        let numlist = Object.keys(obj3).filter((n) => obj3[n] > 1 && n !== "0");
+        let numlist = aS.filter((n) => obj3[n] > 1 && n !== "0");
 
         // 多于1个数字时，计算排列组合  注意去除0
-        let isZero = newArrSet.has("0") ? 1 : 0;
+        let isZero = obj3[0] ? 1 : 0;
         num += size * (size - 1) - isZero * (size - 1) + numlist.length;
       }
     }
