@@ -10,7 +10,7 @@
  * @return {number}
  */
 var buttonWithLongestTime = function (events) {
-  // let obj = {};
+  /* // let obj = {};
   let maxTime = 0,
     res = 0;
   for (let i = 0, ln = events.length; i < ln; i++) {
@@ -32,6 +32,21 @@ var buttonWithLongestTime = function (events) {
     }
   }
   // console.log(obj, maxTime, res);
+  return res; */
+
+
+  let maxTime = events[0][1],
+    res = events[0][0];
+  for (let i = 1, ln = events.length; i < ln; i++) {
+    const [index, time] = events[i];
+    let curTime = time - events[i - 1][1];
+    if (curTime > maxTime) {
+      maxTime = curTime;
+      res = index;
+    } else if (curTime === maxTime) {
+      index < res && (res = index);
+    }
+  }
   return res;
 };
 // @lc code=end
