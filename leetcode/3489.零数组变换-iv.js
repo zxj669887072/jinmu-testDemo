@@ -15,11 +15,12 @@ var minZeroArray = function (nums, queries) {
     return 0;
   }
 
-  let ln = nums.length;
   const numsObj = {};
-  for (let j = 0; j < ln; j++) {
+  for (let j = 0, ln = nums.length; j < ln; j++) {
     numsObj[j + "" + nums[j]] = { [nums[j]]: 1 };
-  }  const checkZero = () => Object.keys(numsObj).every((n) => numsObj[n][0]);
+  }
+
+  const checkZero = () => Object.keys(numsObj).every((n) => numsObj[n][0]);
 
   for (let i = 0, ln2 = queries.length; i < ln2; i++) {
     const [l, r, v] = queries[i];
